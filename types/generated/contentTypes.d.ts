@@ -554,12 +554,12 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
   };
   attributes: {
     title: Schema.Attribute.String & Schema.Attribute.Required;
-    content: Schema.Attribute.Text;
-    date: Schema.Attribute.Date;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     coverImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images' | 'files' | 'videos', true>;
+    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
